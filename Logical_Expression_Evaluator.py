@@ -121,7 +121,7 @@ def evaluator(exp:str,truths:list):
         for key in new_dic:
                 print(f"{key}:{new_dic[key]}")
 
-#Evaluates jf the two logical expressions the same.
+#Evaluates if the two logical expressions are the same.
 def comparer(exp1:str,exp2:str)->bool:
     dic = var_to_dic(exp1)
     truths = truth_combs(len(dic))
@@ -145,8 +145,10 @@ def comparer(exp1:str,exp2:str)->bool:
             return False
     return True
 
-target = "npaq"
-variable = "n(piq)"
+target = "npaq" #(not p) AND q
+variable = "n(piq)" #not (p -> q)
 
-print(comparer(target,variable))
+print(comparer(target,variable)) #The two expressions are the same, returns true.
+print()
+evaluator("paq",truth_combs(2))
 
